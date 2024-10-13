@@ -151,10 +151,14 @@ export default AddAppointment;
 
 import React, { useState, useEffect } from 'react'; // Make sure useEffect is imported
 import { db } from '../../Database/FireBaseConfig'; // Firestore config
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { collection, addDoc, getDocs, doc, getDoc } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth'; // Import Firebase Auth
 import './AddAppointment.css'; // CSS for styling
 
 const AddAppointment = ({ doctor, onClose }) => {
+
+  
+  
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
   const [patientName, setPatientName] = useState('');
@@ -163,15 +167,32 @@ const AddAppointment = ({ doctor, onClose }) => {
   const [status, setStatus] = useState('Pending');
   const [appointments, setAppointments] = useState([]); // State to store existing appointments
 
+  // Function to fetch patient data
+  const fetchPatientData = async (userId) => {
+    const patientDoc = await getDoc(doc(db, 'patients', userId));
+    if (patientDoc.exists()) {
+      const patientData = patientDoc.data();
+      setPatientName(patientData.name); // Automatically set patient name
+      setPatientContact(patientData.mobileNumber); // Optionally set patient contact as well
+    } else {
+      console.error('No such patient found');
+    }
+  };
+
   // Fetch existing appointments when the component mounts
   const fetchAppointments = async () => {
-    const appointmentsCollection = collection(db, 'appointments');
+    const appointmentsCollection = collection(db, 'appointments',);
     const appointmentSnapshot = await getDocs(appointmentsCollection);
     const appointmentList = appointmentSnapshot.docs.map(doc => doc.data());
     setAppointments(appointmentList);
   };
 
   useEffect(() => {
+    const auth = getAuth();
+    const user = auth.currentUser;
+    if (user) {
+      fetchPatientData(user.uid); // Fetch patient data by userId (UID from Firebase Auth)
+    }
     fetchAppointments();
   }, []);
 
@@ -179,6 +200,13 @@ const AddAppointment = ({ doctor, onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const auth = getAuth(); // Get Firebase Authentication instance
+  const user = auth.currentUser; // Get the currently authenticated user
+  
+  if (!user) {
+    alert("No user is logged in.");
+    return;
+  }
     // Check for overlapping appointments
     const appointmentTime = new Date(`${date}T${time}`);
     const appointmentEndTime = new Date(appointmentTime.getTime() + 20 * 60000); // Add 20 minutes
@@ -207,7 +235,9 @@ const AddAppointment = ({ doctor, onClose }) => {
         patientName,
         patientContact,
         note,
+        userId: user.uid, // Add the user ID to the appointment document
         status,
+        
       });
       alert('Appointment added successfully!');
       onClose();
