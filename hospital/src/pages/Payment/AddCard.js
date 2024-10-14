@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { db } from './firebase';  // Import the initialized Firestore instance
+import { db } from '../../Database/FireBaseConfig';
 import { addDoc, collection } from 'firebase/firestore';
 
 const AddCardForm = ({ uid }) => {
