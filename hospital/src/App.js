@@ -13,7 +13,9 @@ import MedicalProfile from './pages/MedicalHistory/MedicalProfile';
 import AddDoctor from './pages/Appointment/AddDoctor';
 import Doctors from './pages/Appointment/Doctors';
 import AddAppointment from './pages/Appointment/AddAppointment';
-
+import ViewDoctor from './pages/Appointment/ViewDoctor';
+import ManageAppointment from './pages/Appointment/ManageAppointment';
+import SendNotification from './pages/Appointment/SendNotification';
 
 function App() {
   return (
@@ -32,6 +34,9 @@ function App() {
         <Route path='/addDoctor' element={<AddDoctor/>}/>
         <Route path='/doctors' element={<Doctors/>}/>
         <Route path='/addAppointment' element={<AddAppointment/>}/>
+        <Route path="/doctors/:doctorId" element={<ViewDoctor />} />
+        <Route path='/manageAppointment' element={<ManageAppointment/>}/>
+        <Route path='/sendNotification' element={<SendNotification/>}/>
       </Routes>
       
     </div>

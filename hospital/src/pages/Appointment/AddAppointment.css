@@ -1,76 +1,86 @@
+/* AddAppointment.css */
+
 .appointment-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* High z-index to appear above other elements */
-  }
-  
-  .appointment-form-container {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    max-width: 400px;
-    width: 100%; /* Full width for responsiveness */
-    position: relative;
-  }
-  
- .appointment-h2 {
-    margin-bottom: 20px;
-  }
-  
-  .appointment-form{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .appointment-form div {
-    margin-bottom: 15px;
-  }
-  
-  .appointment-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .appointment-input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .appointment-submit-btn {
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  .appointment-submit-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  .appointment-cancel-btn{
-    background-color: #ccc;
-  }
-  
-  .appointment-cancel-btn:hover {
-    background-color: #aaa;
-  }
-  
-.appointment-textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: vertical; /* Allow vertical resizing */
-  min-height: 80px; /* Set a minimum height for better usability */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Slightly darker overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
+
+.appointment-form-container {
+  background: white;
+  padding: 30px; /* Increased padding */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+  width: 450px; /* Set a fixed width */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.appointment-form-container:hover {
+  transform: scale(1.02); /* Slight scaling on hover */
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.appointment-input,
+.appointment-textarea {
+  margin-bottom: 15px; /* Increased margin */
+  padding: 12px; /* Increased padding */
+  border: 1px solid #ccc;
+  border-radius: 6px; /* More rounded corners */
+  font-size: 16px; /* Larger font */
+  transition: border-color 0.3s; /* Transition for focus effect */
+}
+
+.appointment-input:focus,
+.appointment-textarea:focus {
+  border-color: #4a90e2; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.appointment-submit-button,
+.modal-close-button {
+  background-color: #3182ce; /* Green */
+  color: white;
+  padding: 12px; /* Increased padding */
+  border: none;
+  border-radius: 6px; /* More rounded corners */
+  cursor: pointer;
+  font-size: 16px; /* Larger font */
+  transition: background-color 0.3s; /* Transition for hover effect */
+  margin-top: 15px;
+}
+
+.appointment-submit-button:hover,
+.modal-close-button:hover {
+  background-color: #2b6cb0; /* Darker green */
+}
+
+.doctor-info {
+  margin-bottom: 20px; /* Increased margin */
+  text-align: center; /* Centered text */
+}
+
+.availability {
+  margin-bottom: 20px; /* Increased margin */
+}
+
+.availability ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center; /* Align to the left for better readability */
+}
+
+.availability li {
+  padding: 5px 0; /* Add padding for list items */
+} 
+
