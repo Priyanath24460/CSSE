@@ -19,6 +19,8 @@ import ViewDoctor from './pages/Appointment/ViewDoctor';
 import ManageAppointment from './pages/Appointment/ManageAppointment';
 import SendNotification from './pages/Appointment/SendNotification';
 
+import AddCardForm from './pages/Payment/AddCard';
+
 function App() {
   return (
     <Router>
@@ -43,6 +45,9 @@ function App() {
         <Route path="/doctors/:doctorId" element={<ViewDoctor />} />
         <Route path='/manageAppointment' element={<ManageAppointment/>}/>
         <Route path='/sendNotification' element={<SendNotification/>}/>
+
+
+        <Route path='/AddCardForm' element={<AddCardForm/>}/>
       </Routes>
       
     </div>
