@@ -1,0 +1,196 @@
+/* ManageAppointment.css */
+/*
+.manage-appointments {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .appointments-table th, .appointments-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .appointments-table th {
+    background-color: #007BFF;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  
+  .appointments-table td {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .approve-button, .reject-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .approve-button {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .approve-button:hover {
+    background-color: #218838;
+  }
+  
+  .reject-button {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .reject-button:hover {
+    background-color: #c82333;
+  }
+  
+  .appointments-table td span {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .appointments-table td span.approved {
+    color: #28a745;
+  }
+  
+  .appointments-table td span.rejected {
+    color: #dc3545;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+  }*/
+
+  .manage-appointments-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f7fafc;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.appointments-header {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.filter-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filter-label {
+    font-size: 16px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.appointments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table-header {
+    background-color: #007BFF;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.header-cell {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.appointment-row {
+    transition: background-color 0.3s ease;
+}
+
+.appointment-row:hover {
+    background-color: #f1f1f1; /* Highlight on hover */
+}
+
+.appointment-cell {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+    color: #555;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.approve-button, .reject-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.approve-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.approve-button:hover {
+    background-color: #218838;
+}
+
+.reject-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.reject-button:hover {
+    background-color: #c82333;
+}
+
+.loading-text {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+}

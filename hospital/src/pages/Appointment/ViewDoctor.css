@@ -1,0 +1,89 @@
+/* Style for the main container */
+.view-doctor-container {
+    padding: 50px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    background-color: #f7fafc; /* White background for contrast */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Doctor name styling */
+.doctor-name {
+    margin: 20px 0;
+    font-size: 2em; /* Larger font size for emphasis */
+    color: #2c3e50; /* Dark color for better readability */
+    font-family: 'Arial', sans-serif; /* Change font family */
+}
+
+/* Doctor image styling */
+.doctor-image {
+    width: 80%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px; /* Rounded corners for the image */
+    border: 2px solid #e0e0e0; /* Light border around the image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+/* Doctor details styling */
+.doctor-details {
+    margin: 20px 0; /* Spacing between details */
+    padding: 20px;
+    background-color: #f8f6f6; /* Light grey background for details */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Doctor detail styles */
+.doctor-speciality,
+.doctor-experience,
+.doctor-location,
+.doctor-bio,
+.doctor-fee {
+    font-size: 1.1em; /* Slightly larger font size */
+    color: #34495e; /* Soft dark color */
+    margin: 10px 0; /* Spacing between details */
+    line-height: 1.5; /* Increase line height for readability */
+}
+
+/* Availability title style */
+.doctor-availability-title {
+    margin-top: 20px;
+    font-size: 1.6em; /* Larger font size for section title */
+    color: #2980b9; /* Blue color for visibility */
+    border-bottom: 2px solid #2980b9; /* Underline for emphasis */
+    padding-bottom: 10px; /* Spacing under the title */
+}
+
+/* Availability list styling */
+.doctor-availability-list {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+}
+
+/* Individual availability slot styling */
+.availability-slot {
+    padding: 8px 0; /* Spacing for each slot */
+    font-size: 1em; /* Consistent font size */
+    color: #165e61; /* Grey color for availability details */
+    border-bottom: 1px solid #e0e0e0; /* Divider for each slot */
+}
+
+/* Submit appointment button styling */
+.submit-appointment-button {
+    padding: 10px 20px;
+    background-color: #2980b9; /* Blue background */
+    color: #fff; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Transition effect */
+    font-size: 1.1em; /* Increase button font size */
+    margin-top: 20px; /* Spacing above the button */
+}
+
+.submit-appointment-button:hover {
+    background-color: #1f6391; /* Darker shade on hover */
+}

@@ -1,0 +1,74 @@
+/* AddDoctor.css */
+
+.add-doctor-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f7fafc;
+}
+
+.add-doctor-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c5282;
+}
+
+.add-doctor-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-doctor-form div {
+    margin-bottom: 15px;
+}
+
+.add-doctor-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Add box-sizing to include padding in width calculation */
+.add-doctor-input,
+.add-doctor-textarea,
+.add-doctor-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    box-sizing: border-box; /* Ensures padding is included in total width */
+}
+
+.add-doctor-input:focus,
+.add-doctor-textarea:focus,
+.add-doctor-select:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+.add-doctor-button {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-doctor-button:hover {
+    background-color: #357ab7;
+}
+
+.add-doctor-availability {
+    margin-bottom: 20px;
+}
+
+.add-doctor-image-input {
+    margin-bottom: 20px;
+}
