@@ -14,11 +14,17 @@ function HospitalHome() {
     console.log("View Patient clicked");
   };
 
+  const Login = ()=> {
+    navigate('/login')
+  }
+  
+
   return (
     <div>
       <h1>Hospital Home</h1>
       <button onClick={handleRegisterPatient}>Register Patient</button>
       <button onClick={handleViewPatient}>View Patient</button>
+      <button onClick={Login}>Login</button>
     </div>
   );
 }
