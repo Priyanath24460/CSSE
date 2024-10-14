@@ -2,8 +2,7 @@ import React, { useRef, useState, useCallback, useEffect } from 'react';
 import Webcam from 'react-webcam';
 import jsQR from 'jsqr'; // QR code decoding
 import { useNavigate } from 'react-router-dom'; // useNavigate for navigation
-import { db } from '../../Database/FireBaseConfig'; // Firebase config
-import { doc, getDoc } from 'firebase/firestore'; // Firestore methods
+
 
 function QrCodeScanner() {
   const webcamRef = useRef(null); // Reference to the webcam

@@ -8,7 +8,9 @@ import QrCodeScanner from './pages/MedicalHistory/QrcodeScanner';
 import HospitalHome from './pages/MedicalHistory/HospitalHome';
 import ViewAllPatient from './pages/MedicalHistory/ViewAllPatient';
 import MedicalProfile from './pages/MedicalHistory/MedicalProfile';
-
+import Appointments from './pages/MedicalHistory/Appointments';
+import PastDiagnosis from './pages/MedicalHistory/PastDiagnosis';
+import MedicalReport from './pages/MedicalHistory/MedicalReport';
 
 import AddDoctor from './pages/Appointment/AddDoctor';
 import Doctors from './pages/Appointment/Doctors';
@@ -26,7 +28,11 @@ function App() {
         <Route path='/register' element={<UserRegister/>}/>
         <Route path='/viewallpatient' element={<ViewAllPatient/>}/>
         <Route path='/login' element={<PatientLogin/>}/>
-        
+        <Route path='/diagnosis/:uid' element={<PastDiagnosis/>}/>
+        <Route path='/medicalreport/:uid' element={<MedicalReport/>}/>
+
+
+        <Route path="/appointments/:uid/:name" element={<Appointments />} /> {/* New route */}
         <Route path='/myqrcodescanner' element={<QrCodeScanner/>}/>
         <Route path="/medicalprofile/:uid" element={<MedicalProfile />} /> {/* Correct route for MedicalProfile */}
         <Route path="/myqrcode/:uid" element={<MyQrCode />} />
