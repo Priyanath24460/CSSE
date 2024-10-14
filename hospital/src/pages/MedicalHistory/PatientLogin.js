@@ -32,7 +32,7 @@ function PatientLogin() {
       // Log in the user with Firebase Auth
       await signInWithEmailAndPassword(auth, email, password);
       setSuccess('Login successful!'); // Display success message
-      navigate('/doctors'); // Redirect to the MyQrCode page after successful login
+      navigate('/patientHome'); // Redirect to the MyQrCode page after successful login
     } catch (error) {
       // Handle errors here
       setError('Failed to login. Please check your credentials.');
