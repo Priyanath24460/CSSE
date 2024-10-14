@@ -135,6 +135,39 @@
 
 
   }
+  .medical-records-buttonsection{
+    display: flex;
+    flex-direction: column; /* Makes the buttons stack vertically */
+    align-items: center; /* Centers the buttons horizontally */
+    gap: 20px; /* Adds space between the buttons */
+
+  }
+
+  .medical-records-button {
+    margin-top: 30px;
+    width: 400px;
+    height: 100px;
+    font-size: 25px;
+    background-color: #43b8d5;
+    border-radius: 20px;
+    border: none; /* Remove border */
+    color: white; /* Text color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Adds a shadow for 3D effect */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transition */
+  }
+  
+  .medical-records-button:active {
+    transform: translateY(4px); /* Moves the button down when clicked */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Smaller shadow when pressed */
+  }
+  
+  .medical-records-button:hover {
+    background-color: #369ebd; /* Darker shade on hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); /* Larger shadow on hover */
+  }
+  
+  
+  
  
   
   /* Responsive adjustments for smaller screens */
