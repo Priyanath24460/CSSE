@@ -1,0 +1,76 @@
+.pastdiagnosis-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .pastdiagnosis-heading {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .pastdiagnosis-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .pastdiagnosis-card {
+    display: flex;
+    justify-content: space-between; /* Divides the card into two sections */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .pastdiagnosis-left, .pastdiagnosis-right {
+    flex: 1; /* Both sections take equal width */
+    padding: 0 10px;
+  }
+  
+  .pastdiagnosis-left {
+    border-right: 1px solid #ddd; /* Adds a separator between the two sections */
+  }
+  
+  .pastdiagnosis-detail {
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .no-pastdiagnosis-message {
+    text-align: center;
+    color: #888;
+  }
+  .read-more-btn {
+    background: none;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    text-decoration: underline;
+    padding: 0;
+  }
+  
+  .read-more-btn:hover {
+    color: #0056b3;
+  }
+  
+  .pastdiagnosis-right {
+    max-width: 60%;
+  }
+  .delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .delete-btn:hover {
+    background-color: darkred;
+  }
+  
