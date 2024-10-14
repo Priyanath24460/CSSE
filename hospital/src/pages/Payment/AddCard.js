@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import { db } from './firebase';  // Import the initialized Firestore instance
+import { addDoc, collection } from 'firebase/firestore';
 
-const AddCardForm = () => {
-  // State to manage form inputs
+const AddCardForm = ({ uid }) => {
   const [formData, setFormData] = useState({
     cardholderName: '',
     cardNumber: '',
@@ -9,7 +10,6 @@ const AddCardForm = () => {
     cvv: ''
   });
 
-  // Handle form input change
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -18,18 +18,36 @@ const AddCardForm = () => {
     });
   };
 
-  // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Card Details Submitted: ', formData);
-    // Add logic to process the card details
+    
+    try {
+      // Add card details to Firestore under a "cards" collection
+      await addDoc(collection(db, 'cards'), {
+        userId: uid,
+        cardholderName: formData.cardholderName,
+        cardNumber: formData.cardNumber,
+        expiryDate: formData.expiryDate,
+        cvv: formData.cvv,
+        createdAt: new Date() // Optionally store the time the card was added
+      });
+
+      console.log('Card details added successfully');
+      setFormData({
+        cardholderName: '',
+        cardNumber: '',
+        expiryDate: '',
+        cvv: ''
+      });
+    } catch (error) {
+      console.error('Error adding card details:', error);
+    }
   };
 
   return (
     <form onSubmit={handleSubmit} className="add-card-form">
       <h2>Add Card Details</h2>
 
-      {/* Cardholder Name */}
       <div className="form-group">
         <label htmlFor="cardholderName">Cardholder Name</label>
         <input
@@ -42,7 +60,6 @@ const AddCardForm = () => {
         />
       </div>
 
-      {/* Card Number */}
       <div className="form-group">
         <label htmlFor="cardNumber">Card Number</label>
         <input
@@ -56,7 +73,6 @@ const AddCardForm = () => {
         />
       </div>
 
-      {/* Expiration Date */}
       <div className="form-group">
         <label htmlFor="expiryDate">Expiration Date</label>
         <input
@@ -69,7 +85,6 @@ const AddCardForm = () => {
         />
       </div>
 
-      {/* CVV */}
       <div className="form-group">
         <label htmlFor="cvv">CVV</label>
         <input
