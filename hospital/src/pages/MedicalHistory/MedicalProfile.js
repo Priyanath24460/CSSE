@@ -1,25 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { db } from '../../Database/FireBaseConfig';
-import { doc, getDoc, collection, query, where, getDocs, updateDoc } from 'firebase/firestore';
-import MedicalDataForm from './MedicalDataForm';
-import DatePicker from 'react-datepicker'; // Import Date Picker
-import './MedicalProfile.css'; // Import the CSS file for styling
+import { doc, getDoc } from 'firebase/firestore';
+import './MedicalProfile.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faQrcode } from '@fortawesome/free-solid-svg-icons';
-import 'react-datepicker/dist/react-datepicker.css';
-
+import { faPlus, faQrcode,faFileMedical,faNotesMedical,faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 
 function MedicalProfile() {
   const { uid } = useParams();
   const [patient, setPatient] = useState(null);
-  const [medicalRecords, setMedicalRecords] = useState([]);
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [currentRecord, setCurrentRecord] = useState(null);
-  const [selectedDate, setSelectedDate] = useState(null); // New state for selected date
   const navigate = useNavigate();
 
+  // Fetch patient data
   useEffect(() => {
     const fetchPatientData = async () => {
       try {
@@ -36,29 +28,25 @@ function MedicalProfile() {
     };
 
     fetchPatientData();
-    
   }, [uid]);
-
-  
 
   const handleGetQrClick = () => {
     navigate(`/myqrcode/${uid}`);
   };
 
-  const handleRegAppoiment = () => {
-    navigate('/register');
-    console.log("Register Patient clicked");
+
+ 
+
+  const handleViewAppointments = () => {
+    navigate(`/appointments/${uid}/${patient.name}`); // Navigate to the appointments page
   };
 
-  const handleViewPatient = () => {
-    navigate('/viewallpatient');
-    console.log("View Patient clicked");
+  const pastdiagnosis = () => {
+    navigate(`/diagnosis/${uid}`); // Navigate to the appointments page
   };
-
-  
-  
-
-
+  const medicalReport = () => {
+    navigate(`/medicalreport/${uid}`); // Navigate to the appointments page
+  };
 
   if (!patient) {
     return <div>Loading patient data...</div>;
@@ -75,14 +63,21 @@ function MedicalProfile() {
         <p><strong>Gender:</strong> {patient.gender}</p>
         <p><strong>Mobile Number:</strong> {patient.mobileNumber}</p>
       </div>
+
       <button className="medical-records-QRbutton" onClick={handleGetQrClick}>
         <FontAwesomeIcon icon={faQrcode} style={{ marginRight: '5px' }} /> Get QR Code
       </button>
 
-      <button onClick={handleRegAppoiment}>Appointment</button>
-      <button onClick={handleViewPatient}>View Patient</button>
+      
+      <div className="medical-records-buttonsection">
+      <button className="medical-records-button" onClick={handleViewAppointments}>
+      <FontAwesomeIcon icon={faCalendarDays} beat />&nbsp;  View Appointments</button> {/* New button */}
 
-     
+      <button className="medical-records-button" onClick={pastdiagnosis}>
+      <FontAwesomeIcon icon={faNotesMedical} beat />&nbsp;    Past Diagnosis</button>
+      <button className="medical-records-button" onClick={medicalReport}>
+      <FontAwesomeIcon icon={faFileMedical} beat />&nbsp; Medical Report</button>
+      </div>
     </div>
   );
 }
